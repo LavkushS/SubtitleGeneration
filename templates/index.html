@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Video Upload</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .round-checkbox {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Video Upload</h1>
+    <form enctype="multipart/form-data" method="post" action="/upload">
+      <input type="file" name="video" accept="video/*" required><br>
+      <label for="options">Select options:</label><br>
+      <input type="checkbox" id="option1" name="text" class="round-checkbox">
+      <label for="option1" class="round-checkbox-label">Engish subtitle</label>
+      <input type="checkbox" id="option2" name="translated_text" class="round-checkbox">
+      <label for="option2" class="round-checkbox-label">translated subtitle</label>
+      <input type="checkbox" id="option3" name="translated_audio" class="round-checkbox">
+      <label for="option3" class="round-checkbox-label">translated audio</label>
+      <select name="language" id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="fr">French</option>
+      </select>
+      <input type="submit" value="Upload">
+    </form>
+  </div>
+</body>
+</html>

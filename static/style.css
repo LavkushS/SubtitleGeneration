@@ -1,0 +1,68 @@
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  animation: fade-in 1s ease-in-out;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.round-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.round-checkbox-label {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* Styling for checkbox label hover effect */
+.round-checkbox-label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

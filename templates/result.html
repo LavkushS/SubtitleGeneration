@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function downloadText(text, filename) {
+      const element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Result</h1>
+    <h2>Transcribed Text:</h2>
+    <p>{{ transcribed_text }}</p>
+    <h2>Translated Text:</h2>
+    <p>{{ translated_text }}</p>
+    <div>
+      <button onclick="downloadText('{{ transcribed_text }}', 'transcribed_text.txt')">Download Transcribed Text</button>
+    </div>
+    <div>
+      <button onclick="downloadText('{{ translated_text }}', 'translated_text.txt')">Download Translated Text</button>
+    </div>
+  </div>
+</body>
+</html>
